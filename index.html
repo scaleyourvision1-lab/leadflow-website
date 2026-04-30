@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<link rel="icon" type="image/svg+xml" href="./favicon.svg"/>
+<title>LeadFlow – Performance Marketing für Unternehmen</title>
+<meta name="description" content="LeadFlow – Performance Marketing Agentur. Meta Ads & Landingpages, die Ergebnisse liefern. Dein Business wächst – oder du bezahlst nicht."/>
+<meta property="og:title" content="LeadFlow – Performance Marketing für Unternehmen"/>
+<meta property="og:description" content="Meta Ads & Landingpages. Dein Business wächst – oder du bezahlst nicht."/>
+<meta property="og:type" content="website"/>
+<meta property="og:image" content="./Bilder/letsscale.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="LeadFlow – Performance Marketing für Unternehmen"/>
+<meta name="twitter:description" content="Meta Ads & Landingpages. Dein Business wächst – oder du bezahlst nicht."/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#ffffff;
+  --bg2:#f5f6fa;
+  --bg3:#eef0f6;
+  --text:#0a0c28;
+  --muted:rgba(10,12,40,.5);
+  --muted2:rgba(10,12,40,.35);
+  --border:rgba(10,12,40,.08);
+  --border2:rgba(10,12,40,.15);
+  --accent:#0a0c28;
+  --r:8px;--rl:14px;
+}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{background:var(--bg);color:var(--text);font-family:'Plus Jakarta Sans',system-ui,sans-serif;overflow-x:hidden;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+button,a{-webkit-tap-highlight-color:transparent}
+button{touch-action:manipulation}
+::-webkit-scrollbar{width:4px}::-webkit-scrollbar-track{background:transparent}::-webkit-scrollbar-thumb{background:rgba(10,12,40,.15);border-radius:4px}
+
+/* ─── NAV ─── */
+nav{position:fixed;top:0;width:100%;z-index:200;padding:0 2.5rem;display:flex;justify-content:space-between;align-items:center;background:rgba(255,255,255,.88);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--border);height:60px}
+.nav-logo img{height:50px;object-fit:contain;filter:brightness(0) contrast(1)}
+.nav-links{display:none}
+.nav-cta{display:none}
+.hamburger{display:flex;background:none;border:none;cursor:pointer;flex-direction:column;gap:5px;padding:.4rem}
+.hamburger span{display:block;width:22px;height:1.5px;background:var(--text);border-radius:2px;transition:.3s;opacity:.6}
+.hamburger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg);opacity:1}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg);opacity:1}
+.mob-overlay{position:fixed;inset:0;background:rgba(0,0,0,.3);z-index:150;display:none;backdrop-filter:blur(4px)}
+.mob-overlay.open{display:block}
+.mob-menu{position:fixed;top:0;right:0;width:85vw;height:100vh;background:var(--bg2);border-left:1px solid var(--border);z-index:160;transform:translateX(100%);transition:transform .3s ease;padding:5rem 1.5rem 2.5rem;display:flex;flex-direction:column;gap:.3rem}
+.mob-menu.open{transform:translateX(0)}
+.mob-item{background:none;border:none;color:var(--muted);font-family:'Plus Jakarta Sans',sans-serif;font-size:1.25rem;font-weight:600;padding:1rem 1rem;border-radius:var(--r);cursor:pointer;text-align:left;width:100%;transition:.2s;text-decoration:none;display:block}
+.mob-item:hover{background:rgba(10,12,40,.05);color:var(--text)}
+.mob-item.acc{color:#fff;background:var(--text);font-weight:700;margin-top:.8rem;text-align:center;border-radius:var(--r)}
+.mob-item.acc:hover{background:rgba(10,12,40,.8)}
+
+/* ─── BUTTONS ─── */
+.btn-p{background:var(--text);color:#fff;border:none;padding:.75rem 1.8rem;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:.875rem;letter-spacing:.01em;cursor:pointer;border-radius:var(--r);transition:.2s;white-space:nowrap}
+.btn-p:hover{background:rgba(10,12,40,.8);transform:translateY(-1px)}
+.btn-g{background:transparent;color:var(--text);border:1px solid var(--border2);padding:.75rem 1.8rem;font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:.875rem;cursor:pointer;border-radius:var(--r);transition:.2s;white-space:nowrap}
+.btn-g:hover{border-color:var(--text);background:rgba(10,12,40,.04)}
+.nav-btn{background:var(--text);color:#fff;border:none;padding:.48rem 1.2rem;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:.8rem;cursor:pointer;border-radius:var(--r);transition:.2s}
+.nav-btn:hover{background:rgba(10,12,40,.8)}
+
+/* ─── HERO ─── */
+#hero{min-height:100vh;background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:8rem 2rem 4rem;position:relative;overflow:hidden}
+.hero-radial{position:absolute;top:-10%;left:50%;transform:translateX(-50%);width:900px;height:600px;background:radial-gradient(ellipse,rgba(10,12,40,.04) 0%,transparent 65%);pointer-events:none}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:.5rem;font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:1.8rem;border:1px solid var(--border2);padding:.3rem 1rem;border-radius:999px;background:var(--bg2);position:relative;z-index:1}
+.hero-display{font-weight:800;font-size:clamp(3rem,7vw,6.5rem);line-height:.96;letter-spacing:-.03em;margin-bottom:1.8rem;position:relative;z-index:1;color:var(--text)}
+.typed-wrap{display:block}
+.typed-cursor{opacity:1;animation:blink .7s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+.hero-sub{font-size:1rem;color:var(--muted);max-width:500px;margin:0 auto 2.5rem;line-height:1.75;font-weight:400;position:relative;z-index:1}
+.hero-cta{display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap;position:relative;z-index:1}
+
+/* ─── DASHBOARD ─── */
+.dashboard{margin:5rem auto 0;max-width:860px;width:calc(100% - 4rem);background:var(--bg);border:1px solid var(--border);border-radius:var(--rl);overflow:hidden;box-shadow:0 8px 60px rgba(10,12,40,.1);position:relative;z-index:1}
+.db-bar{background:var(--bg2);padding:.65rem 1rem;display:flex;align-items:center;gap:.5rem;border-bottom:1px solid var(--border)}
+.db-dot{width:10px;height:10px;border-radius:50%}
+.db-dot:nth-child(1){background:#ff5f57}.db-dot:nth-child(2){background:#febc2e}.db-dot:nth-child(3){background:#28c840}
+.db-title{font-size:.72rem;color:var(--muted2);margin-left:.5rem}
+.db-body{padding:1.5rem}
+.db-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border-radius:var(--r);overflow:hidden;margin-bottom:1.2rem}
+.db-stat{background:var(--bg);padding:1.1rem;text-align:center}
+.db-num{font-size:1.5rem;font-weight:800;letter-spacing:-.02em;color:var(--text)}
+.db-lbl{font-size:.68rem;color:var(--muted2);margin-top:.25rem}
+.db-table{width:100%;border-collapse:collapse;font-size:.78rem}
+.db-table th{color:var(--muted2);font-weight:500;text-align:left;padding:.5rem .7rem;border-bottom:1px solid var(--border)}
+.db-table td{padding:.55rem .7rem;border-bottom:1px solid var(--border);color:var(--muted)}
+.db-table td:first-child{color:var(--text)}
+.db-badge{display:inline-block;padding:.2rem .6rem;border-radius:999px;font-size:.68rem;font-weight:600}
+.db-badge.aktiv{background:rgba(34,197,94,.12);color:#16a34a;border:1px solid rgba(34,197,94,.25)}
+@media(max-width:600px){.db-stats{grid-template-columns:repeat(2,1fr)}.db-table{display:none}}
+
+/* ─── SECTIONS ─── */
+.sec{padding:7rem 2rem}
+.sec-inner{max-width:1100px;margin:0 auto}
+.sec-eyebrow{display:flex;align-items:center;gap:.6rem;font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.9rem}
+.sec-eyebrow::before,.sec-eyebrow::after{content:'';display:inline-block;width:18px;height:1px;background:var(--border2)}
+.sec-title{font-size:clamp(1.9rem,3.2vw,2.7rem);font-weight:800;letter-spacing:-.025em;line-height:1.08;margin-bottom:.8rem;color:var(--text)}
+.sec-sub{color:var(--muted);font-size:.95rem;line-height:1.75;max-width:540px}
+.sec-head{text-align:center;margin-bottom:4rem}
+.sec-head .sec-sub{margin:0 auto}
+.sec-head .sec-eyebrow{justify-content:center}
+
+/* ─── MARQUEE ─── */
+.marquee-wrap{overflow:hidden;padding:.55rem 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:var(--bg2)}
+.marquee-track{display:flex;gap:2.125rem;white-space:nowrap;animation:marquee 8s linear infinite}
+.marquee-track:hover{animation-play-state:paused}
+.marquee-item{font-size:.7rem;font-weight:600;color:var(--muted2);letter-spacing:.1em;text-transform:uppercase}
+.marquee-dot{color:var(--muted2);opacity:.5;font-size:.7rem}
+@keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+/* ─── VORTEILE ─── */
+#vorteile{background:var(--bg2);border-top:1px solid var(--border)}
+.vorteile-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--rl);overflow:hidden}
+@media(max-width:768px){.vorteile-grid{grid-template-columns:1fr}}
+.v-card{background:var(--bg);padding:2.5rem 2rem;transition:.25s;position:relative;overflow:hidden}
+.v-card:hover{background:var(--bg2)}
+.v-card::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--text);transform:scaleX(0);transition:.3s;transform-origin:left}
+.v-card:hover::after{transform:scaleX(1)}
+.v-num{font-size:.68rem;font-weight:700;letter-spacing:.12em;color:var(--muted2);margin-bottom:1.5rem}
+.v-icon{font-size:1.6rem;margin-bottom:.9rem}
+.v-title{font-size:1.05rem;font-weight:700;color:var(--text);margin-bottom:.6rem}
+.v-desc{color:var(--muted);font-size:.875rem;line-height:1.7}
+
+/* ─── LEAD STREAM ─── */
+#leads{background:var(--bg);border-top:1px solid var(--border)}
+.leads-wrap{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+@media(max-width:768px){.leads-wrap{grid-template-columns:1fr;gap:2.5rem}}
+
+/* ─── IPHONE ─── */
+.iphone-wrap{display:flex;justify-content:center;align-items:center;position:relative}
+.iphone-device{position:relative;width:260px;height:530px;background:linear-gradient(160deg,#2a2a2e 0%,#1a1a1e 60%,#111114 100%);border-radius:46px;box-shadow:0 0 0 1px rgba(255,255,255,.12),0 0 0 2px rgba(0,0,0,.8),inset 0 0 0 1px rgba(255,255,255,.06),0 40px 80px rgba(10,12,40,.18);padding:8px;flex-shrink:0}
+.iphone-device::before{content:'';position:absolute;left:-3px;top:100px;width:3px;height:36px;background:linear-gradient(180deg,#2a2a2e,#1a1a1e);border-radius:2px 0 0 2px;box-shadow:-1px 0 0 rgba(255,255,255,.08)}
+.iphone-device::after{content:'';position:absolute;right:-3px;top:130px;width:3px;height:60px;background:linear-gradient(180deg,#2a2a2e,#1a1a1e);border-radius:0 2px 2px 0;box-shadow:1px 0 0 rgba(255,255,255,.08)}
+.iphone-btn-vol1,.iphone-btn-vol2,.iphone-btn-mute{position:absolute;left:-3px;width:3px;background:linear-gradient(180deg,#2a2a2e,#1a1a1e);border-radius:2px 0 0 2px;box-shadow:-1px 0 0 rgba(255,255,255,.08)}
+.iphone-btn-mute{top:72px;height:26px}.iphone-btn-vol1{top:112px;height:44px}.iphone-btn-vol2{top:164px;height:44px}
+.iphone-screen{width:100%;height:100%;border-radius:34px;overflow:hidden;display:flex;flex-direction:column;position:relative;background:url('./Bilder/iPhone 16 Schwarz Wallpaper Sept 21 2024.jpeg') center/cover no-repeat}
+.iphone-statusbar{display:flex;justify-content:space-between;align-items:center;padding:0 20px;height:40px;flex-shrink:0;background:transparent;position:relative;z-index:2}
+.iphone-statusbar-time{font-size:.65rem;font-weight:700;color:rgba(255,255,255,.9);letter-spacing:-.01em}
+.iphone-statusbar-icons{display:flex;align-items:center;gap:5px}
+.iphone-statusbar-icons svg{width:14px;height:14px;fill:rgba(255,255,255,.9)}
+.iphone-di{position:absolute;top:10px;left:50%;transform:translateX(-50%);width:90px;height:28px;background:#000;border-radius:20px;z-index:10}
+.iphone-lockscreen{flex:1;min-height:0;display:flex;flex-direction:column;padding:.1rem .55rem .15rem;position:relative;z-index:1;overflow:hidden}
+.iphone-ls-time{font-size:3rem;font-weight:200;color:#fff;letter-spacing:-.02em;text-align:center;line-height:1;margin-bottom:.12rem;text-shadow:0 2px 20px rgba(0,0,0,.35)}
+.iphone-ls-date{font-size:.6rem;font-weight:400;color:rgba(255,255,255,.78);text-align:center;margin-bottom:.5rem;letter-spacing:.01em}
+.notif-stream{display:flex;flex-direction:column;gap:.28rem;overflow:hidden}
+.notif-card{background:rgba(255,255,255,.18);backdrop-filter:blur(30px);-webkit-backdrop-filter:blur(30px);border:1px solid rgba(255,255,255,.22);border-radius:14px;padding:.48rem .6rem;animation:fadeUp .4s ease}
+.notif-hdr{display:flex;align-items:center;gap:.3rem;margin-bottom:.22rem}
+.notif-icon{width:16px;height:16px;border-radius:4px;background:#0a0c28;display:flex;align-items:center;justify-content:center;font-size:.4rem;font-weight:900;color:#fff;flex-shrink:0}
+.notif-app{font-size:.48rem;font-weight:600;color:rgba(255,255,255,.72);flex:1;letter-spacing:.04em;text-transform:uppercase}
+.notif-ntime{font-size:.46rem;color:rgba(255,255,255,.48);white-space:nowrap}
+.notif-title{font-size:.6rem;font-weight:700;color:#fff;line-height:1.3}
+.iphone-home-bar{height:20px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.iphone-home-bar::after{content:'';width:38%;height:4px;background:rgba(255,255,255,.35);border-radius:3px}
+.iphone-glow{position:absolute;bottom:-30px;left:50%;transform:translateX(-50%);width:200px;height:60px;background:radial-gradient(ellipse,rgba(34,197,94,.18) 0%,transparent 70%);pointer-events:none}
+
+/* ─── OPTIMIERUNG ─── */
+#optimierung{background:var(--bg2);border-top:1px solid var(--border)}
+.opt-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
+@media(max-width:768px){.opt-grid{grid-template-columns:1fr}}
+.ocard{background:var(--bg);border:1px solid var(--border);border-radius:var(--rl);padding:2rem;transition:.25s}
+.ocard:hover{border-color:var(--border2);box-shadow:0 4px 24px rgba(10,12,40,.06)}
+.opt-metrics{display:grid;grid-template-columns:repeat(2,1fr);gap:.6rem;margin-top:1.2rem}
+.opt-metric{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);padding:.7rem .8rem;text-align:center}
+.opt-num{font-size:1.05rem;font-weight:800;color:var(--text)}
+.opt-lbl{font-size:.68rem;color:var(--muted2);margin-top:.15rem}
+
+/* ─── PROZESS ─── */
+#prozess{background:var(--bg);border-top:1px solid var(--border)}
+.prozess-list{display:flex;flex-direction:column;gap:.6rem;max-width:740px;margin:0 auto}
+.pstep{display:grid;grid-template-columns:52px 1fr;gap:1.2rem;align-items:start;background:var(--bg2);border:1px solid var(--border);border-radius:var(--rl);padding:1.4rem 1.6rem;transition:.25s}
+.pstep:hover{border-color:var(--border2);background:var(--bg3)}
+.pstep-num{font-size:.78rem;font-weight:700;color:var(--muted);letter-spacing:.04em;width:36px;height:36px;border-radius:50%;border:1px solid var(--border2);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:.1rem}
+.pstep-title{font-size:.975rem;font-weight:700;margin-bottom:.35rem;color:var(--text)}
+.pstep-desc{color:var(--muted);font-size:.875rem;line-height:1.65}
+
+/* ─── REFERENZEN ─── */
+#referenzen{background:var(--bg2);border-top:1px solid var(--border)}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
+@media(max-width:900px){.testi-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.testi-grid{grid-template-columns:1fr}}
+.testi-card{background:var(--bg);border:1px solid var(--border);border-radius:var(--rl);padding:1.8rem;transition:.3s;display:flex;flex-direction:column;position:relative;overflow:hidden;box-shadow:0 2px 12px rgba(10,12,40,.04)}
+.testi-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--text);opacity:0;transition:.3s}
+.testi-card:hover{border-color:var(--border2);transform:translateY(-3px);box-shadow:0 8px 28px rgba(10,12,40,.08)}
+.testi-card:hover::before{opacity:1}
+.testi-metric{font-size:1.35rem;font-weight:800;color:var(--text);margin-bottom:.8rem;letter-spacing:-.02em}
+.testi-quote{color:var(--muted);font-size:.875rem;line-height:1.75;margin-bottom:1.2rem;font-style:italic;flex:1}
+.testi-footer{display:flex;align-items:center;gap:.75rem;margin-top:auto;padding-top:1rem;border-top:1px solid var(--border)}
+.testi-avatar{width:52px;height:52px;border-radius:50%;object-fit:cover;object-position:center 15%;border:1px solid var(--border);flex-shrink:0}
+.testi-author{font-weight:700;font-size:.85rem;color:var(--text)}
+.testi-company{color:var(--muted2);font-size:.75rem;margin-top:.1rem}
+
+/* ─── VERGLEICH ─── */
+#vergleich{background:var(--bg);border-top:1px solid var(--border)}
+.vergleich-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;max-width:880px;margin:0 auto}
+@media(max-width:600px){.vergleich-grid{grid-template-columns:1fr}}
+.vcard{background:var(--bg2);border:1px solid var(--border);border-radius:var(--rl);padding:2rem}
+.vcard.good{border-color:rgba(10,12,40,.2)}
+.vcard-head{font-size:.9rem;font-weight:700;margin-bottom:1.2rem;padding-bottom:.8rem;border-bottom:1px solid var(--border)}
+.vcard-head.good{font-weight:900;font-size:1rem}
+.vcard-head.bad{color:#f87171}
+.vcard-head.good{color:var(--text)}
+.vlist{list-style:none;display:flex;flex-direction:column;gap:.65rem}
+.vlist li{display:flex;align-items:flex-start;gap:.65rem;font-size:.875rem;color:var(--muted)}
+.vlist li::before{flex-shrink:0;width:18px;height:18px;border-radius:50%;margin-top:.05rem;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:800;line-height:1}
+.vlist.bad li::before{content:'✕';background:rgba(248,113,113,.08);border:1px solid rgba(248,113,113,.3);color:#f87171}
+.vlist.good li{color:var(--text)}
+.vlist.good li::before{content:'✓';background:rgba(34,197,94,.12);border:1px solid rgba(34,197,94,.3);color:#16a34a}
+
+/* ─── FAQ ─── */
+#faq{background:var(--bg2);border-top:1px solid var(--border)}
+.faq-list{max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:.5rem}
+.faq-item{background:var(--bg);border:1px solid var(--border);border-radius:var(--rl);overflow:hidden;transition:.25s}
+.faq-item:hover{border-color:var(--border2)}
+.faq-item.open{border-color:var(--border2)}
+.faq-q{width:100%;background:none;border:none;color:var(--text);padding:1.2rem 1.4rem;display:flex;justify-content:space-between;align-items:center;cursor:pointer;text-align:left;gap:1rem;font-family:'Plus Jakarta Sans',sans-serif;font-size:.9rem;font-weight:600}
+.faq-ico{font-size:.75rem;color:var(--muted2);flex-shrink:0;transition:transform .3s}
+.faq-item.open .faq-ico{transform:rotate(180deg);color:var(--text)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease,padding .3s}
+.faq-item.open .faq-a{max-height:300px}
+.faq-a p{padding:.1rem 1.4rem 1.2rem;color:var(--muted);font-size:.875rem;line-height:1.75}
+
+/* ─── ÜBER UNS ─── */
+#ueber-uns{background:var(--bg);border-top:1px solid var(--border)}
+.ueber-wrap{display:grid;grid-template-columns:1fr 1.1fr;gap:4rem;align-items:center}
+@media(max-width:768px){.ueber-wrap{grid-template-columns:1fr;gap:2.5rem}}
+.ueber-img-wrap{border-radius:var(--rl);overflow:hidden;border:1px solid var(--border)}
+.ueber-img{width:100%;aspect-ratio:3/4;object-fit:cover;display:block;object-position:65% 10%;transform:scale(1.15);transform-origin:65% 50%}
+.ueber-tag{display:inline-block;background:var(--bg3);border:1px solid var(--border);border-radius:999px;font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);padding:.3rem .9rem;margin-bottom:1.2rem}
+.ueber-text h2{font-size:clamp(1.8rem,3vw,2.5rem);font-weight:800;letter-spacing:-.025em;line-height:1.1;margin-bottom:1.2rem;color:var(--text)}
+.ueber-text p{color:var(--muted);font-size:.95rem;line-height:1.8;margin-bottom:1rem}
+.ueber-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem;margin-top:2rem}
+.ueber-stat{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);padding:1rem;text-align:center}
+.ueber-stat-num{font-size:1.4rem;font-weight:800;letter-spacing:-.02em;color:var(--text)}
+.ueber-stat-lbl{font-size:.68rem;color:var(--muted2);margin-top:.2rem}
+
+/* ─── CTA ─── */
+#cta{border-top:1px solid var(--border);padding:8rem 2rem;text-align:center;position:relative;overflow:hidden;background:url('./Bilder/letsscale.png') center/cover no-repeat}
+#cta::before{content:'';position:absolute;inset:0;background:rgba(10,12,40,.5);pointer-events:none}
+#cta h2{font-size:clamp(2.5rem,5.5vw,4.5rem);font-weight:800;letter-spacing:-.03em;margin-bottom:1rem;color:#fff;position:relative;z-index:1}
+#cta p{color:rgba(255,255,255,.7);font-size:1.05rem;max-width:460px;margin:0 auto 2.5rem;line-height:1.7;position:relative;z-index:1}
+.cta-btns{position:relative;z-index:1;display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap}
+.btn-cta{background:#fff;color:var(--text);border:none;padding:.78rem 1.8rem;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:.875rem;cursor:pointer;border-radius:var(--r);transition:.2s}
+.btn-cta:hover{background:rgba(255,255,255,.88);transform:translateY(-1px)}
+
+/* ─── FOOTER ─── */
+footer{background:var(--bg2);border-top:1px solid var(--border);padding:1.875rem 2rem}
+.footer-inner{max-width:1100px;margin:0 auto}
+.footer-top{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:3rem;margin-bottom:2rem}
+.footer-logo img{height:88px;width:auto;display:block;filter:brightness(0) contrast(1);opacity:1;margin-bottom:.7rem}
+.footer-logo p{color:var(--muted2);font-size:.8rem;max-width:220px;line-height:1.7}
+.footer-cols{display:contents}
+.footer-col h4{font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted2);margin-bottom:1rem}
+.footer-col a{display:block;color:var(--muted);font-size:.85rem;text-decoration:none;margin-bottom:.55rem;transition:.2s}
+.footer-col a:hover{color:var(--text)}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.8rem;padding-top:1.5rem;border-top:1px solid var(--border)}
+.footer-bottom p{color:var(--muted2);font-size:.75rem}
+.footer-legal{display:flex;gap:.5rem;align-items:center}
+.footer-legal a{color:var(--muted2);font-size:.72rem;text-decoration:none;transition:.2s}
+.footer-legal a:hover{color:var(--text)}
+.footer-legal span{color:var(--muted2);font-size:.72rem}
+@media(max-width:768px){.footer-top{grid-template-columns:1fr 1fr;gap:2rem}.footer-bottom{flex-direction:column;text-align:center;align-items:center}}
+@media(max-width:500px){.footer-top{grid-template-columns:1fr}}
+
+/* ─── CHAT ─── */
+#chat-btn{position:fixed;bottom:2rem;right:2rem;z-index:999;width:54px;height:54px;border-radius:50%;background:var(--text);color:#fff;border:none;cursor:pointer;box-shadow:0 4px 24px rgba(10,12,40,.2);display:flex;align-items:center;justify-content:center;font-size:1.3rem;transition:.3s}
+#chat-btn:hover{transform:scale(1.08);background:rgba(10,12,40,.8)}
+#chat-btn .ping{position:absolute;top:-2px;right:-2px;width:11px;height:11px;background:#22c55e;border-radius:50%;border:2px solid #fff}
+#chat-box{position:fixed;bottom:5rem;right:2rem;z-index:998;width:360px;max-width:calc(100vw - 2rem);background:var(--bg);border:1px solid var(--border);border-radius:var(--rl);overflow:hidden;box-shadow:0 20px 60px rgba(10,12,40,.15);display:none;flex-direction:column}
+#chat-box.open{display:flex}
+.chat-hdr{background:var(--text);padding:1rem 1.2rem;display:flex;justify-content:space-between;align-items:center}
+.chat-hdr-info{display:flex;align-items:center;gap:.7rem}
+.chat-av{width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25);display:flex;align-items:center;justify-content:center;font-size:.95rem}
+.chat-hdr h4{font-size:.875rem;font-weight:700;color:#fff}
+.chat-hdr span{font-size:.7rem;color:rgba(255,255,255,.7)}
+.chat-x{background:none;border:none;color:rgba(255,255,255,.7);font-size:1.1rem;cursor:pointer;transition:.2s;line-height:1}
+.chat-x:hover{color:#fff}
+.chat-msgs{padding:1rem;display:flex;flex-direction:column;gap:.7rem;max-height:300px;overflow-y:auto;min-height:180px}
+.msg{max-width:85%;padding:.65rem .95rem;border-radius:10px;font-size:.875rem;line-height:1.5;animation:fadeUp .3s ease}
+.msg.bot{background:var(--bg2);color:var(--text);align-self:flex-start;border-bottom-left-radius:3px;border:1px solid var(--border)}
+.msg.user{background:var(--text);color:#fff;align-self:flex-end;border-bottom-right-radius:3px;font-weight:600}
+@keyframes typing-dot{0%,60%,100%{opacity:.2;transform:translateY(0)}30%{opacity:1;transform:translateY(-4px)}}
+.typing-dots{display:inline-flex;gap:5px;align-items:center;padding:3px 0}
+.typing-dots span{width:7px;height:7px;background:var(--muted);border-radius:50%;animation:typing-dot 1.2s ease-in-out infinite}
+.typing-dots span:nth-child(2){animation-delay:.15s}
+.typing-dots span:nth-child(3){animation-delay:.3s}
+.msg.loading{opacity:1}
+.chat-opts{padding:.4rem 1rem .8rem;display:flex;flex-wrap:wrap;gap:.4rem}
+.chat-opt{background:var(--bg2);border:1px solid var(--border);color:var(--muted);padding:.38rem .8rem;border-radius:999px;font-size:.78rem;cursor:pointer;transition:.2s;font-weight:500}
+.chat-opt:hover{background:var(--bg3);border-color:var(--border2);color:var(--text)}
+.chat-inp-row{display:flex;padding:.75rem;gap:.5rem;border-top:1px solid var(--border)}
+#chat-input{flex:1;background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);padding:.5rem .8rem;color:var(--text);font-size:.875rem;outline:none;font-family:'Plus Jakarta Sans',sans-serif}
+#chat-input::placeholder{color:var(--muted2)}
+#chat-input:focus{border-color:var(--border2)}
+#chat-send{background:var(--text);border:none;color:#fff;padding:.5rem .9rem;border-radius:var(--r);cursor:pointer;font-size:.9rem;transition:.2s;font-weight:700}
+#chat-send:hover{background:rgba(10,12,40,.8)}
+
+/* ─── COOKIE BANNER ─── */
+#cookie-banner{position:fixed;bottom:0;left:0;right:0;z-index:9999;background:var(--text);padding:.9rem 2rem;display:none}
+.cookie-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;justify-content:space-between}
+.cookie-inner p{font-size:.8rem;color:rgba(255,255,255,.75);margin:0;line-height:1.6}
+.cookie-inner a{color:#fff;text-decoration:underline}
+.cookie-btns{display:flex;gap:.6rem;flex-shrink:0}
+.cookie-btns button{padding:.4rem 1rem;border-radius:var(--r);font-size:.8rem;font-weight:600;cursor:pointer;font-family:'Plus Jakarta Sans',sans-serif;border:none;transition:.2s}
+.cookie-btns .cookie-decline{background:rgba(255,255,255,.12);color:#fff}
+.cookie-btns .cookie-decline:hover{background:rgba(255,255,255,.2)}
+.cookie-btns .cookie-accept{background:#fff;color:var(--text)}
+.cookie-btns .cookie-accept:hover{background:rgba(255,255,255,.88)}
+@media(max-width:600px){#cookie-banner{padding:.9rem 1.2rem}.cookie-inner{flex-direction:column;align-items:flex-start;gap:.8rem}}
+
+/* ─── ANIMATIONS ─── */
+@keyframes fadeUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+
+/* ─── MOBILE ─── */
+@media(max-width:768px){
+  nav{padding:0 1.2rem;height:54px}
+  .nav-logo img{height:52px;transform:scale(1.6);transform-origin:left 43%}
+  #hero{padding:4rem 1.2rem 3rem}
+  .hero-eyebrow{font-size:.6rem;letter-spacing:.06em;padding:.28rem .7rem;text-align:center;white-space:normal}
+  .hero-sub{font-size:.92rem;max-width:100%}
+  .hero-cta{flex-direction:column;align-items:center}
+  .hero-cta .btn-p,.hero-cta .btn-g{width:100%;max-width:320px;padding:.9rem 1.8rem;font-size:.95rem}
+  .dashboard{margin:3rem auto 0;width:calc(100% - 2.4rem)}
+  .db-body{padding:1rem}.db-num{font-size:1.2rem}
+  .sec{padding:4.5rem 1.2rem}
+  .sec-head{margin-bottom:2.5rem}
+  .leads-wrap{gap:2.5rem}
+  .iphone-device{width:230px;height:470px;border-radius:40px}
+  .iphone-screen{border-radius:30px}
+  .pstep{grid-template-columns:44px 1fr;gap:.9rem;padding:1.1rem 1.2rem}
+  #cta{padding:5rem 1.2rem}
+  .cta-btns{flex-direction:column;align-items:center}
+  .btn-cta{width:100%;max-width:320px}
+  footer{padding:1.875rem 1.2rem}
+  #chat-btn{bottom:1.2rem;right:1.2rem}
+  #chat-box{right:1rem;width:calc(100vw - 2rem)}
+  .ueber-wrap{gap:2rem}
+  .ueber-img-wrap{order:2}
+  .ueber-text{order:1}
+  .ueber-img{aspect-ratio:4/3;transform:scale(1.2) translateX(-5%);transform-origin:50% 50%;object-position:100% 22%}
+  .ueber-stats{gap:.5rem}
+  .ueber-stat{padding:.75rem .5rem}
+  .ueber-stat-num{font-size:1.15rem}
+  .ueber-stat-lbl{font-size:.6rem}
+  section[id]{scroll-margin-top:60px}
+  .footer-bottom p{overflow-wrap:break-word;word-break:break-word}
+}
+@media(max-width:400px){
+  .hero-eyebrow{font-size:.56rem;letter-spacing:.04em}
+  .hero-display{font-size:clamp(2rem,8.5vw,3rem);white-space:nowrap;font-weight:800;overflow:hidden;max-width:100%}
+}
+@media(prefers-reduced-motion:reduce){
+  .marquee-track{animation:none}
+  html{scroll-behavior:auto}
+}
+@media(min-width:769px){
+  .nav-links{display:flex;gap:2rem;list-style:none}
+  .nav-links a{color:var(--muted);text-decoration:none;font-size:.875rem;font-weight:500;transition:.2s}
+  .nav-links a:hover{color:var(--text)}
+  .nav-cta{display:block}
+  .hamburger{display:none}
+  .hero-sub{max-width:560px}
+  section[id]{scroll-margin-top:70px}
+  .nav-logo img{height:60px;transform:scale(2.16);transform-origin:left 50%}
+}
+@media(min-width:1280px){
+  nav{padding:.45rem 3.5rem}
+  .sec-inner{max-width:1200px}
+  .sec{padding:8rem 2rem}
+  .dashboard{max-width:920px}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo"><img src="./Bilder/logo.png" alt="LeadFlow"/></div>
+  <ul class="nav-links">
+    <li><a href="#vorteile">Leistungen</a></li>
+    <li><a href="#prozess">Prozess</a></li>
+    <li><a href="#referenzen">Referenzen</a></li>
+    <li><a href="./portfolio.html">Website-Portfolio</a></li>
+    <li><a href="./ads-ergebnisse.html">Ads-Ergebnisse</a></li>
+  </ul>
+  <button class="nav-btn nav-cta" onclick="openWhatsApp()">Jetzt anfragen</button>
+  <button class="hamburger" id="ham" onclick="toggleMob()"><span></span><span></span><span></span></button>
+</nav>
+<div class="mob-overlay" id="mob-ov" onclick="closeMob()"></div>
+<div class="mob-menu" id="mob-menu">
+  <a class="mob-item" href="./index.html">Home</a>
+  <a class="mob-item" href="./portfolio.html">Website-Portfolio</a>
+  <a class="mob-item" href="./ads-ergebnisse.html">Ads-Ergebnisse</a>
+  <button class="mob-item acc" onclick="openWhatsApp();closeMob()">Jetzt anfragen</button>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-radial"></div>
+  <h1 class="hero-display">
+    <span class="typed-wrap"><span id="typed"></span><span class="typed-cursor">|</span></span>
+  </h1>
+  <p class="hero-sub">Dein Business wächst – oder du bezahlst nicht. Meta Ads & Landingpages, die Ergebnisse liefern. Direkt. Messbar. Ohne Ausreden.</p>
+  <div class="hero-cta">
+    <button class="btn-p" onclick="openCalendly()">Kostenloses Erstgespräch</button>
+    <button class="btn-g" onclick="goTo('prozess')">Wie es funktioniert</button>
+  </div>
+  <div class="dashboard">
+    <div class="db-bar">
+      <div class="db-dot"></div><div class="db-dot"></div><div class="db-dot"></div>
+      <span class="db-title">LeadFlow Dashboard – Übersicht</span>
+    </div>
+    <div class="db-body">
+      <div style="display:flex;justify-content:flex-end;margin-bottom:.8rem"><span style="font-size:.7rem;font-weight:600;color:var(--muted2);background:var(--bg3);padding:.25rem .7rem;border-radius:999px;border:1px solid var(--border)">Letzte 7 Tage</span></div>
+      <div class="db-stats">
+        <div class="db-stat"><div class="db-num" data-count="27638" data-suffix=" €">0</div><div class="db-lbl">Umsatz</div></div>
+        <div class="db-stat"><div class="db-num" data-count="6">0</div><div class="db-lbl">ROAS</div></div>
+        <div class="db-stat"><div class="db-num" data-count="84">0</div><div class="db-lbl">Neue Anfragen</div></div>
+        <div class="db-stat"><div class="db-num" data-count="31">0</div><div class="db-lbl">Gebuchte Termine</div></div>
+      </div>
+      <table class="db-table">
+        <thead><tr><th>Status</th><th>Kampagne</th><th>Plattform</th><th>Anfragen</th><th>Kosten</th><th>ROAS</th></tr></thead>
+        <tbody>
+          <tr><td><span class="db-badge aktiv">Aktiv</span></td><td>Leadgen Kampagne</td><td>Meta</td><td>47</td><td>980 €</td><td>7x</td></tr>
+          <tr><td><span class="db-badge aktiv">Aktiv</span></td><td>Brand Awareness</td><td>Instagram</td><td>37</td><td>620 €</td><td>5x</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-wrap">
+  <div class="marquee-track">
+    <span class="marquee-item">Meta Ads</span><span class="marquee-dot"> · </span>
+    <span class="marquee-item">Mehr Anfragen</span><span class="marquee-dot"> · </span>
+    <span class="marquee-item">Landingpages</span><span class="marquee-dot"> · </span>
+    <span class="marquee-item">Höherer ROAS</span><span class="marquee-dot"> · </span>
+    <span class="marquee-item">Alle Branchen</span><span class="marquee-dot"> · </span>
+    <span class="marquee-item">Conversion-Optimierung</span><span class="marquee-dot"> · </span>
+    <span class="marquee-item">Messbare Ergebnisse</span><span class="marquee-dot"> · </span>
+    <span class="marquee-item">Retargeting</span><span class="marquee-dot"> · </span>
+    <span class="marquee-item">Direkt & Transparent</span><span class="marquee-dot"> · </span>
+    <span class="marquee-item">Keine Mindestlaufzeit</span><span class="marquee-dot"> · </span>
+    <span class="marquee-item">Meta Ads</span><span class="marquee-dot"> · </span>
+    <span class="marquee-item">Mehr Anfragen</span><span class="marquee-dot"> · </span>
+    <span class="marquee-item">Landingpages</span><span class="marquee-dot"> · </span>
+    <span class="marquee-item">Höherer ROAS</span><span class="marquee-dot"> · </span>
+    <span class="marquee-item">Alle Branchen</span><span class="marquee-dot"> · </span>
+    <span class="marquee-item">Conversion-Optimierung</span><span class="marquee-dot"> · </span>
+    <span class="marquee-item">Messbare Ergebnisse</span><span class="marquee-dot"> · </span>
+    <span class="marquee-item">Retargeting</span><span class="marquee-dot"> · </span>
+    <span class="marquee-item">Direkt & Transparent</span><span class="marquee-dot"> · </span>
+    <span class="marquee-item">Keine Mindestlaufzeit</span><span class="marquee-dot"> · </span>
+  </div>
+</div>
+
+<!-- VORTEILE -->
+<section id="vorteile" class="sec">
+  <div class="sec-inner">
+    <div class="sec-head">
+      <div class="sec-eyebrow">Leistungen</div>
+      <h2 class="sec-title">Dein Wachstum ist kein Zufall</h2>
+      <p class="sec-sub">Drei Hebel, mit denen wir Unternehmen systematisch skalieren – nicht durch Glück, sondern durch Methode.</p>
+    </div>
+    <div class="vorteile-grid">
+      <div class="v-card">
+        <div class="v-num">01</div>
+        <div class="v-icon">🎯</div>
+        <div class="v-title">Meta Ads, die sich rechnen</div>
+        <div class="v-desc">Schluss mit Budgets, die ins Leere fließen. Wir bauen Kampagnen auf Facebook & Instagram, die zuverlässig qualifizierte Anfragen liefern – Monat für Monat.</div>
+      </div>
+      <div class="v-card">
+        <div class="v-num">02</div>
+        <div class="v-icon">📊</div>
+        <div class="v-title">Du siehst jeden Cent</div>
+        <div class="v-desc">Kein Rätselraten, keine weichgespülten Reportings. Du weißt jederzeit genau, was dein Budget bringt – live, nachvollziehbar, ohne Schönfärberei.</div>
+      </div>
+      <div class="v-card">
+        <div class="v-num">03</div>
+        <div class="v-icon">🖥️</div>
+        <div class="v-title">Seiten, die verkaufen</div>
+        <div class="v-desc">Eine Landingpage ist entweder ein Verkäufer oder ein Kostenfaktor. Wir bauen dir eine, die Besucher in zahlende Kunden verwandelt – schnell, professionell, messbar.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LEAD STREAM -->
+<section id="leads" class="sec" style="background:var(--bg2);border-top:1px solid var(--border)">
+  <div class="sec-inner">
+    <div class="leads-wrap">
+      <div>
+        <div class="sec-eyebrow">Planbare Anfragen</div>
+        <h2 class="sec-title">Stell dir vor, dein Handy hört nicht auf zu klingeln.</h2>
+        <p class="sec-sub" style="margin-bottom:2rem">Unsere Kunden wachen morgens auf und finden neue Terminbuchungen in ihrem Postfach. Das ist kein Zufall – das ist System.</p>
+        <button class="btn-p" onclick="openWhatsApp()">Jetzt anfragen</button>
+      </div>
+      <div class="iphone-wrap">
+        <div class="iphone-device">
+          <div class="iphone-btn-mute"></div>
+          <div class="iphone-btn-vol1"></div>
+          <div class="iphone-btn-vol2"></div>
+          <div class="iphone-screen">
+            <div class="iphone-di"></div>
+            <div class="iphone-statusbar">
+              <div></div>
+              <div class="iphone-statusbar-icons">
+                <svg viewBox="0 0 24 16"><rect x="0" y="8" width="4" height="8" rx="1"/><rect x="5" y="5" width="4" height="11" rx="1"/><rect x="10" y="2" width="4" height="14" rx="1"/><rect x="15" y="0" width="4" height="16" rx="1" opacity=".3"/></svg>
+                <svg viewBox="0 0 24 18"><path d="M12 14a2 2 0 110 4 2 2 0 010-4zm0-5a8 8 0 016.25 3l-2.1 2.1A5 5 0 0012 12.5a5 5 0 00-4.15 1.6L5.75 12A8 8 0 0112 9zm0-5c4.1 0 7.8 1.7 10.5 4.4L20.4 10.5A12 12 0 0012 7a12 12 0 00-8.4 3.5L1.5 8.4C4.2 5.7 7.9 4 12 4z"/></svg>
+                <svg viewBox="0 0 28 14"><rect x="0" y="1" width="24" height="12" rx="3" stroke="rgba(255,255,255,.85)" stroke-width="1.5" fill="none"/><rect x="24.5" y="4.5" width="2.5" height="5" rx="1.5" fill="rgba(255,255,255,.4)"/><rect x="1.5" y="2.5" width="18" height="9" rx="2" fill="rgba(255,255,255,.9)"/></svg>
+              </div>
+            </div>
+            <div class="iphone-lockscreen">
+              <div class="iphone-ls-time">9:41</div>
+              <div class="iphone-ls-date">Montag, 16. März</div>
+              <div class="notif-stream" id="lead-stream">
+                <div class="notif-card"><div class="notif-hdr"><div class="notif-icon" style="background:none;padding:0;overflow:hidden"><img src="./Bilder/mail-icon.png" style="width:16px;height:16px;border-radius:4px;display:block"></div><span class="notif-app">Mail</span><span class="notif-ntime">Gerade eben</span></div><div class="notif-title">Termin gebucht – Julia M.</div></div>
+                <div class="notif-card"><div class="notif-hdr"><div class="notif-icon" style="background:none;padding:0;overflow:hidden"><img src="./Bilder/mail-icon.png" style="width:16px;height:16px;border-radius:4px;display:block"></div><span class="notif-app">Mail</span><span class="notif-ntime">Vor 3 Min.</span></div><div class="notif-title">Termin gebucht – Sarah K.</div></div>
+                <div class="notif-card"><div class="notif-hdr"><div class="notif-icon" style="background:none;padding:0;overflow:hidden"><img src="./Bilder/mail-icon.png" style="width:16px;height:16px;border-radius:4px;display:block"></div><span class="notif-app">Mail</span><span class="notif-ntime">Vor 11 Min.</span></div><div class="notif-title">Termin gebucht – Laura B.</div></div>
+                <div class="notif-card" style="opacity:.6"><div class="notif-hdr"><div class="notif-icon" style="background:none;padding:0;overflow:hidden"><img src="./Bilder/mail-icon.png" style="width:16px;height:16px;border-radius:4px;display:block"></div><span class="notif-app">Mail</span><span class="notif-ntime">Vor 28 Min.</span></div><div class="notif-title">Termin gebucht – Nina R.</div></div>
+              </div>
+            </div>
+            <div class="iphone-home-bar"></div>
+          </div>
+        </div>
+        <div class="iphone-glow"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OPTIMIERUNG -->
+<section id="optimierung" class="sec">
+  <div class="sec-inner">
+    <div class="sec-head">
+      <div class="sec-eyebrow">Performance</div>
+      <h2 class="sec-title">Wir optimieren, bis es sich rechnet.</h2>
+      <p class="sec-sub">Nicht einmal schalten und hoffen – täglich auswerten, anpassen, skalieren. So entstehen Ergebnisse, auf die du dich verlassen kannst.</p>
+    </div>
+    <div class="opt-grid">
+      <div class="ocard">
+        <div style="font-size:1.5rem;margin-bottom:.8rem">⚡</div>
+        <div class="v-title" style="margin-bottom:.5rem">Tägliche Optimierung</div>
+        <div class="v-desc">Wir schauen jeden Tag in deine Kampagnen – nicht wöchentlich, nicht monatlich. Jeder Datenpunkt wird genutzt, um dein Budget effizienter einzusetzen.</div>
+        <div class="opt-metrics">
+          <div class="opt-metric"><div class="opt-num">12€</div><div class="opt-lbl">Pro Anfrage</div></div>
+          <div class="opt-metric"><div class="opt-num">+15</div><div class="opt-lbl">Leads/Tag</div></div>
+          <div class="opt-metric"><div class="opt-num">0,40€</div><div class="opt-lbl">CPC</div></div>
+          <div class="opt-metric"><div class="opt-num">6x</div><div class="opt-lbl">ROAS</div></div>
+        </div>
+      </div>
+      <div class="ocard">
+        <div style="font-size:1.5rem;margin-bottom:.8rem">📈</div>
+        <div class="v-title" style="margin-bottom:.5rem">Erfahrung, die zählt</div>
+        <div class="v-desc">125+ Kampagnen. Jede davon hat uns gelehrt, was funktioniert und was nicht. Du profitierst von diesem Wissen – ab Tag eins, ohne teure Lernphase.</div>
+        <div style="margin-top:1rem;font-size:.72rem;color:var(--muted2)">Letzte 3 Monate</div>
+        <div style="display:flex;gap:.5rem;margin-top:.5rem;align-items:flex-end;height:50px">
+          <div style="flex:1;background:rgba(10,12,40,.08);border-radius:3px;height:30%"></div>
+          <div style="flex:1;background:rgba(10,12,40,.12);border-radius:3px;height:55%"></div>
+          <div style="flex:1;background:rgba(10,12,40,.16);border-radius:3px;height:40%"></div>
+          <div style="flex:1;background:rgba(10,12,40,.22);border-radius:3px;height:65%"></div>
+          <div style="flex:1;background:rgba(10,12,40,.32);border-radius:3px;height:80%"></div>
+          <div style="flex:1;background:rgba(10,12,40,.48);border-radius:3px;height:70%"></div>
+          <div style="flex:1;background:rgba(10,12,40,.7);border-radius:3px;height:100%"></div>
+        </div>
+      </div>
+      <div class="ocard">
+        <div style="font-size:1.5rem;margin-bottom:.8rem">🤝</div>
+        <div class="v-title" style="margin-bottom:.5rem">Direkter Draht zu mir</div>
+        <div class="v-desc">Kein Account-Manager, kein Ticket-System, kein Warten. Du erreichst mich direkt – so wie es sein sollte, wenn echtes Geld im Spiel ist.</div>
+        <div style="margin-top:1.2rem;padding:.8rem;background:var(--bg2);border-radius:var(--r);border:1px solid var(--border)">
+          <div style="font-size:.72rem;color:var(--muted2);margin-bottom:.3rem">Ø Zusammenarbeit</div>
+          <div style="font-size:1.5rem;font-weight:800;color:var(--text)">12 Monate</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROZESS -->
+<section id="prozess" class="sec" style="background:var(--bg2);border-top:1px solid var(--border)">
+  <div class="sec-inner">
+    <div class="sec-head">
+      <div class="sec-eyebrow">Prozess</div>
+      <h2 class="sec-title">Von null auf Anfragen – in 7 Tagen.</h2>
+      <p class="sec-sub">Unser bewährter Prozess bringt dich schnell an den Start – ohne Chaos, ohne böse Überraschungen. Nur klare Schritte, klare Ergebnisse.</p>
+    </div>
+    <div class="prozess-list">
+      <div class="pstep"><div class="pstep-num">01</div><div><div class="pstep-title">Copywriting</div><div class="pstep-desc">Texte, die nicht nach Werbung klingen. Wir schreiben Anzeigentexte, die deine Zielgruppe dort treffen, wo es zählt – und sie zum Handeln bringen.</div></div></div>
+      <div class="pstep"><div class="pstep-num">02</div><div><div class="pstep-title">Ad Creatives</div><div class="pstep-desc">Bilder und Videos, die im Feed stoppen. Jedes Creative wird individuell auf deine Branche und Zielgruppe zugeschnitten – kein Stockfoto-Brei, kein generisches Design.</div></div></div>
+      <div class="pstep"><div class="pstep-num">03</div><div><div class="pstep-title">Landingpage & Design</div><div class="pstep-desc">Eine Seite mit einer Aufgabe: Besucher zu Anfragen machen. Schnell gebaut, auf Conversion optimiert, direkt einsatzbereit.</div></div></div>
+      <div class="pstep"><div class="pstep-num">04</div><div><div class="pstep-title">Media Buying</div><div class="pstep-desc">Wir wissen, wie Meta-Algorithmen arbeiten. Dein Budget wird so eingesetzt, dass kein Euro verschwendet wird – strukturiert, datengetrieben, effizient.</div></div></div>
+      <div class="pstep"><div class="pstep-num">05</div><div><div class="pstep-title">Reporting & Skalierung</div><div class="pstep-desc">Monatliche Strategiegespräche, klare Zahlen, konkrete nächste Schritte. Kein Bullshit-Report – nur das, was dich wirklich weiterbringt.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ÜBER UNS -->
+<section id="ueber-uns" class="sec" style="border-top:1px solid var(--border)">
+  <div class="sec-inner">
+    <div class="ueber-wrap">
+      <div class="ueber-img-wrap">
+        <img class="ueber-img" src="./Bilder/levi-profil.png" alt="Levi Kirr" loading="lazy"/>
+      </div>
+      <div class="ueber-text">
+        <div class="ueber-tag">Über uns</div>
+        <h2>Wer steckt hinter LeadFlow?</h2>
+        <p>Ich bin Levi Kirr – Gründer von LeadFlow. Was als Ein-Mann-Projekt für lokale Unternehmen begann, ist heute eine Performance-Marketing-Agentur, die Unternehmen aus verschiedensten Branchen messbar skaliert.</p>
+        <p>Mein Ansatz ist klar: keine leeren Versprechen, kein Agentur-Bullshit – nur Ergebnisse, die in Zahlen sprechen. Meta Ads & konvertierende Landingpages, die wirklich wirken.</p>
+        <p>Jedes Projekt bekommt meine volle Aufmerksamkeit. Du arbeitest direkt mit mir – kein Account-Manager, kein Ticket-System.</p>
+        <div class="ueber-stats">
+          <div class="ueber-stat"><div class="ueber-stat-num">125+</div><div class="ueber-stat-lbl">Kampagnen</div></div>
+          <div class="ueber-stat"><div class="ueber-stat-num">6x</div><div class="ueber-stat-lbl">Ø ROAS</div></div>
+          <div class="ueber-stat"><div class="ueber-stat-num">12 Mo.</div><div class="ueber-stat-lbl">Ø Zusammenarbeit</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REFERENZEN -->
+<section id="referenzen" class="sec" style="background:var(--bg2);border-top:1px solid var(--border)">
+  <div class="sec-inner">
+    <div class="sec-head">
+      <div class="sec-eyebrow">Referenzen</div>
+      <h2 class="sec-title">Bewiesen statt behauptet</h2>
+      <p class="sec-sub">Ergebnisse und Stimmen, die für sich sprechen.</p>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card"><div class="testi-metric">+40% Anfragen</div><div class="testi-quote">"In den ersten 60 Tagen haben wir 40% mehr Anfragen als je zuvor bekommen. Das Tracking war von Anfang an transparent und nachvollziehbar."</div><div class="testi-footer"><img class="testi-avatar" loading="lazy" src="./Bilder/Fitnesstudio.jpeg" alt="Martin F."/><div><div class="testi-author">Martin F.</div><div class="testi-company">Fitnessstudio, München</div></div></div></div>
+      <div class="testi-card"><div class="testi-metric">6x Return on Adspend</div><div class="testi-quote">"Endlich eine Agentur, die unsere Zielgruppe wirklich versteht. Kein generischer Content – alles wirkt professionell und zielgruppengerecht."</div><div class="testi-footer"><img class="testi-avatar" loading="lazy" src="./Bilder/Immobilienmakler.jpeg" alt="Marcel N."/><div><div class="testi-author">Marcel N.</div><div class="testi-company">Immobilienmakler, Hamburg</div></div></div></div>
+      <div class="testi-card"><div class="testi-metric">Website in 5 Tagen</div><div class="testi-quote">"Die neue Website sieht nicht nur top aus – sie konvertiert. Innerhalb von zwei Wochen nach Launch hatten wir die ersten organischen Anfragen."</div><div class="testi-footer"><img class="testi-avatar" loading="lazy" src="./Bilder/OnlineShop.jpeg" alt="Klara M."/><div><div class="testi-author">Klara M.</div><div class="testi-company">Bestatterin, Berlin</div></div></div></div>
+      <div class="testi-card"><div class="testi-metric">+340% ROI</div><div class="testi-quote">"Die Landingpage hat unsere Conversion-Rate verdreifacht. Endlich eine Seite, die Besucher wirklich zu Kunden macht."</div><div class="testi-footer"><img class="testi-avatar" loading="lazy" src="./Bilder/Handwerker.jpeg" alt="Mateo E."/><div><div class="testi-author">Mateo E.</div><div class="testi-company">Handwerksbetrieb, Frankfurt</div></div></div></div>
+      <div class="testi-card"><div class="testi-metric">80+ Anfragen/Monat</div><div class="testi-quote">"Wir hatten ab Tag 1 der Kampagne qualifizierte Anfragen und an manchen Tagen bis zu 8 Buchungen auf einmal."</div><div class="testi-footer"><img class="testi-avatar" loading="lazy" src="./Bilder/Zahnärztin.jpeg" alt="Simone A."/><div><div class="testi-author">Simone A.</div><div class="testi-company">Zahnarztpraxis, Köln</div></div></div></div>
+      <div class="testi-card"><div class="testi-metric">Professioneller Auftritt</div><div class="testi-quote">"Unsere alte Website war eine Katastrophe. LeadFlow hat uns in einer Woche eine moderne, schnelle Seite gebaut – Kunden vertrauen uns jetzt sofort."</div><div class="testi-footer"><div style="width:52px;height:52px;border-radius:50%;overflow:hidden;flex-shrink:0;border:1px solid var(--border)"><img loading="lazy" src="./Bilder/Gastronomie.png" alt="Torsten U." style="width:90px;height:auto;margin-top:-28px;margin-left:-19px"/></div><div><div class="testi-author">Torsten U.</div><div class="testi-company">Gastronomie, Düsseldorf</div></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- VERGLEICH -->
+<section id="vergleich" class="sec" style="border-top:1px solid var(--border)">
+  <div class="sec-inner">
+    <div class="sec-head">
+      <div class="sec-eyebrow">Vergleich</div>
+      <h2 class="sec-title">LeadFlow im Vergleich</h2>
+      <p class="sec-sub">Deshalb sticht LeadFlow mit einem unvergleichbaren Service gegenüber der Konkurrenz heraus.</p>
+    </div>
+    <div class="vergleich-grid">
+      <div class="vcard">
+        <div class="vcard-head bad">Andere Agenturen</div>
+        <ul class="vlist bad">
+          <li>Fehlende Ergebnisse & kein klarer ROI</li>
+          <li>Lange Wartezeiten, zähe Umsetzung</li>
+          <li>Decken nur Teilbereiche ab</li>
+          <li>Keine Branchenkenntnis & generische Ansätze</li>
+          <li>Unpersönliche Fließband-Betreuung</li>
+          <li>Standardisierte, austauschbare Kampagnen</li>
+          <li>Kaum Budget-Transparenz</li>
+          <li>Stark begrenzter Support nach Kampagnenstart</li>
+        </ul>
+      </div>
+      <div class="vcard good">
+        <div class="vcard-head good">LeadFlow</div>
+        <ul class="vlist good">
+          <li>Nachweislich hohe ROIs & starke Case Studies</li>
+          <li>Schnelle Umsetzung mit klaren Deadlines</li>
+          <li>Holistischer Marketing-Ansatz</li>
+          <li>Tiefes Verständnis für deine Branche & Zielgruppe</li>
+          <li>Enge Zusammenarbeit auf Augenhöhe</li>
+          <li>Maßgeschneiderte Performance-Strategien</li>
+          <li>100% Klarheit über jeden investierten Euro</li>
+          <li>Laufende Optimierung & persönliche Beratung</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="sec" style="background:var(--bg2);border-top:1px solid var(--border)">
+  <div class="sec-inner">
+    <div class="sec-head">
+      <div class="sec-eyebrow">FAQ</div>
+      <h2 class="sec-title">Die Antworten auf deine Fragen</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span>Für wen ist LeadFlow geeignet?</span><span class="faq-ico">▾</span></button><div class="faq-a"><p>Für Unternehmen jeder Branche, die ein erprobtes Angebot haben und messbar mehr Kunden gewinnen wollen – egal ob Dienstleister, Handwerk, E-Commerce oder lokales Gewerbe.</p></div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span>Mit welchem Werbebudget sollte ich starten?</span><span class="faq-ico">▾</span></button><div class="faq-a"><p>Unsere Kunden starten in der Regel mit mindestens 1.000 € monatlichem Ad-Budget. Je mehr Spielraum vorhanden ist, desto schneller sehen wir Ergebnisse, können optimieren und skalieren.</p></div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span>Wie schnell können wir eine Kampagne starten?</span><span class="faq-ico">▾</span></button><div class="faq-a"><p>Nach Freigabe aller notwendigen Zugänge und Inhalte ist ein Kampagnenstart in der Regel innerhalb von 7 Tagen möglich.</p></div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span>Gibt es eine Mindestvertragslaufzeit?</span><span class="faq-ico">▾</span></button><div class="faq-a"><p>Es gibt keine Mindestvertragslaufzeit. In der Praxis arbeiten die meisten Kunden nach etwa 3 Monaten langfristig mit uns zusammen, da Kampagnen in dieser Zeit valide aufgesetzt und erste belastbare Ergebnisse erzielt werden.</p></div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span>Ich möchte mit euch zusammenarbeiten – wie geht es weiter?</span><span class="faq-ico">▾</span></button><div class="faq-a"><p>Buche dir ein kostenloses Erstgespräch. Dort analysieren wir dein Business, prüfen das Wachstumspotenzial – und wenn alles passt, bekommst du einen klaren Schritt-für-Schritt-Plan zur Skalierung.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="cta">
+  <div style="position:relative;z-index:1">
+    <h2>Let's Scale!</h2>
+    <p>In einem kostenlosen Erstgespräch analysieren wir dein Business und evaluieren dein Wachstumspotenzial.</p>
+    <div class="cta-btns">
+      <button class="btn-cta" onclick="openWhatsApp()">Jetzt anfragen</button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-logo">
+        <img src="./Bilder/logo.png" alt="LeadFlow"/>
+        <p>Performance Marketing für Unternehmen jeder Branche.</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <a href="#vorteile">Leistungen</a>
+          <a href="#referenzen">Referenzen</a>
+          <a href="#prozess">Ablauf</a>
+          <a href="./portfolio.html">Website-Portfolio</a>
+          <a href="./ads-ergebnisse.html">Ads-Ergebnisse</a>
+        </div>
+        <div class="footer-col">
+          <h4>Kontakt</h4>
+          <a href="https://wa.me/4915563398656" target="_blank">WhatsApp</a>
+          <a href="mailto:scaleyourvision1@gmail.com">E-Mail</a>
+          <a href="https://calendly.com/scaleyourvision1/free" target="_blank">Erstgespräch buchen</a>
+          <a href="./impressum.html">Impressum</a>
+          <a href="./datenschutz.html">Datenschutz</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>Gegründet von Levi Kirr</p>
+      <p>Copyright © 2026 LeadFlow. Alle Rechte vorbehalten.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- META PIXEL: Nach Cookie-Zustimmung geladen – loadMetaPixel() im Script -->
+
+<!-- COOKIE BANNER -->
+<div id="cookie-banner">
+  <div class="cookie-inner">
+    <p>Wir nutzen Cookies und den Meta Pixel, um unsere Werbung zu optimieren und die Website zu verbessern. <a href="./datenschutz.html">Mehr erfahren</a></p>
+    <div class="cookie-btns">
+      <button class="cookie-decline" onclick="cookieChoice(false)">Ablehnen</button>
+      <button class="cookie-accept" onclick="cookieChoice(true)">Akzeptieren</button>
+    </div>
+  </div>
+</div>
+
+<!-- CHAT -->
+<button id="chat-btn" onclick="toggleChat()">💬<div class="ping"></div></button>
+<div id="chat-box">
+  <div class="chat-hdr">
+    <div class="chat-hdr-info"><div class="chat-av">🙋🏼‍♀️</div><div><h4>Anna – KI-Assistentin</h4><span>KI-Assistent · Online</span></div></div>
+    <button class="chat-x" onclick="toggleChat()">✕</button>
+  </div>
+  <div class="chat-msgs" id="chat-msgs"></div>
+  <div class="chat-opts" id="chat-opts"></div>
+  <div class="chat-inp-row">
+    <input id="chat-input" type="text" placeholder="Schreib eine Nachricht..." onkeydown="if(event.key==='Enter')sendMsg()"/>
+    <button id="chat-send" onclick="sendMsg()">↑</button>
+  </div>
+</div>
+
+<script>
+const CALENDLY_URL='https://calendly.com/scaleyourvision1/free';
+
+const phrases=["Mehr Kunden.","Mehr Umsatz.","Mehr Wachstum.","Mehr Anfragen."];
+let pi=0,ci=0,deleting=false;
+const el=document.getElementById('typed');
+function type(){
+  const phrase=phrases[pi];
+  if(!deleting){el.textContent=phrase.slice(0,++ci);if(ci===phrase.length){deleting=true;setTimeout(type,1600);return;}}
+  else{el.textContent=phrase.slice(0,--ci);if(ci===0){deleting=false;pi=(pi+1)%phrases.length;setTimeout(type,400);return;}}
+  setTimeout(type,deleting?45:65);
+}
+type();
+
+function animateCounter(el){
+  const target=+el.dataset.count;const suffix=el.dataset.suffix||'';let cur=0;const step=target/60;
+  const timer=setInterval(()=>{cur=Math.min(cur+step,target);el.textContent=(target>1000?Math.floor(cur).toLocaleString('de'):Math.floor(cur))+suffix;if(cur>=target){el.textContent=(target>1000?target.toLocaleString('de'):target)+suffix;clearInterval(timer);}},16);
+}
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){document.querySelectorAll('[data-count]').forEach(animateCounter);obs.disconnect();}});},{threshold:.2});
+const dbEl=document.querySelector('.dashboard');if(dbEl)obs.observe(dbEl);
+
+const leadPool=[{title:"Termin gebucht – Mia S."},{title:"Termin gebucht – Lena F."},{title:"Termin gebucht – Jana K."},{title:"Termin gebucht – Clara W."},{title:"Termin gebucht – Sophie M."},{title:"Termin gebucht – Emma R."},{title:"Termin gebucht – Hanna L."},{title:"Termin gebucht – Leon M."},{title:"Termin gebucht – Finn K."},{title:"Termin gebucht – Jonas W."},{title:"Termin gebucht – Elias R."}];
+let leadIdx=0;
+const times=["Gerade eben","Vor 1 Min.","Vor 3 Min.","Vor 7 Min.","Vor 12 Min.","Vor 19 Min.","Vor 25 Min."];
+setInterval(()=>{
+  const stream=document.getElementById('lead-stream');if(!stream)return;
+  const lead=leadPool[leadIdx%leadPool.length];leadIdx++;
+  const ni=document.createElement('div');ni.className='notif-card';
+  ni.innerHTML=`<div class="notif-hdr"><div class="notif-icon" style="background:none;padding:0;overflow:hidden"><img src="./Bilder/mail-icon.png" style="width:16px;height:16px;border-radius:4px;display:block"></div><span class="notif-app">Mail</span><span class="notif-ntime">Gerade eben</span></div><div class="notif-title">${lead.title}</div>`;
+  stream.insertBefore(ni,stream.firstChild);
+  const items=[...stream.querySelectorAll('.notif-card')];
+  items.forEach((it,i)=>{const t=it.querySelector('.notif-ntime');if(t)t.textContent=times[i]||times[times.length-1];});
+  if(stream.children.length>4)stream.lastChild.remove();
+},4000);
+
+function toggleMob(){document.getElementById('ham').classList.toggle('open');document.getElementById('mob-menu').classList.toggle('open');document.getElementById('mob-ov').classList.toggle('open');}
+function closeMob(){document.getElementById('ham').classList.remove('open');document.getElementById('mob-menu').classList.remove('open');document.getElementById('mob-ov').classList.remove('open');}
+function goTo(id){const el=document.getElementById(id);if(el)el.scrollIntoView({behavior:'smooth'});closeMob();}
+function toggleFaq(btn){const item=btn.closest('.faq-item');const was=item.classList.contains('open');document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));if(!was)item.classList.add('open');}
+
+const STEPS=[
+  {bot:"👋 Hallo! Ich bin Anna, dein persönlicher KI-Assistent. Was möchtest du tun?",opts:["📈 Mehr Kunden gewinnen","💡 Marketing optimieren","📞 Erstgespräch buchen"]},
+  {bot:"Super! Welche Leistung interessiert dich am meisten?",opts:["Meta Ads","Landingpage & Design","Beides"]},
+  {bot:"Wie viele Anfragen bekommt dein Business aktuell pro Monat?",opts:["Unter 20","20–50","50–100","Über 100"]},
+  {bot:null,opts:[]}
+];
+let step=0,chatOpen=false,convo=[],selectedService=null,awaitingName=false,userName=null;
+function toggleChat(){chatOpen=!chatOpen;document.getElementById('chat-box').classList.toggle('open',chatOpen);if(chatOpen&&step===0)startChat();}
+function openCalendly(){window.open(CALENDLY_URL,'_blank');}
+function openWhatsApp(){window.open('https://wa.me/4915563398656','_blank');}
+function startChat(){addMsg('bot',STEPS[0].bot);setTimeout(()=>showOpts(STEPS[0].opts),400);step=1;}
+function showOpts(opts){const el=document.getElementById('chat-opts');el.innerHTML='';opts.forEach(o=>{const b=document.createElement('button');b.className='chat-opt';b.textContent=o;b.onclick=()=>handleChatOpt(o);el.appendChild(b);});}
+function handleOpt(t){document.getElementById('chat-opts').innerHTML='';addMsg('user',t);convo.push({role:'user',content:t});setTimeout(()=>nextStep(t),400);}
+function sendMsg(){
+  const inp=document.getElementById('chat-input');const v=inp.value.trim();if(!v)return;
+  inp.value='';document.getElementById('chat-opts').innerHTML='';addMsg('user',v);
+  if(awaitingName){
+    awaitingName=false;userName=v;convo.push({role:'user',content:v});
+    const id=addMsg('bot','...',true);
+    setTimeout(()=>{updateMsg(id,`Schön, ${userName}! 🎉 Ich öffne jetzt den Kalender – such dir einen Termin aus, der passt.`);showOpts(["📅 Termin auswählen","📱 WhatsApp schreiben"]);},700);
+    return;
+  }
+  convo.push({role:'user',content:v});setTimeout(()=>callAI(v),400);
+}
+async function nextStep(msg){
+  if(step===1){
+    if(msg==="📞 Erstgespräch buchen"){addMsg('user',msg);startCalendlyFlow();return;}
+    const s=STEPS[step];addMsg('bot',s.bot);setTimeout(()=>showOpts(s.opts),300);step++;
+  } else if(step===2){
+    selectedService=msg;const s=STEPS[step];addMsg('bot',s.bot);setTimeout(()=>showOpts(s.opts),300);step++;
+  } else if(step===3){
+    step++;
+    const personalized={'Unter 20':"Perfekt – genau für diese Phase sind wir da. Mit einem gezielten Ads-Setup bringen wir dich schnell auf Wachstumskurs. Am besten besprechen wir das kurz.",'20–50':"Gute Basis! Mit optimierten Kampagnen und einer starken Landingpage lässt sich das realistisch verdoppeln. Ich zeige dir wie.",'50–100':"Starke Zahlen! Jetzt geht es darum, die Qualität der Anfragen zu steigern und den ROAS zu maximieren. Das besprechen wir am besten direkt."};
+    const id=addMsg('bot','...',true);
+    const reply=personalized[msg]||"Klingt gut! Am besten sprechen wir kurz darüber, was für dich möglich ist. Buch dir gerne einen Termin.";
+    setTimeout(()=>{updateMsg(id,reply);convo.push({role:'assistant',content:reply});showOpts(["📅 Erstgespräch buchen","💬 Weitere Frage","📱 WhatsApp schreiben"]);},700);
+  } else {await callAI(msg);}
+}
+const FAQ=[
+  {k:['preis','kosten','was kostet','budget','preise','investition','teuer','wie viel','wieviel'],r:"Das Ad-Budget startet ab 1.000 € / Monat. Die Agenturgebühr besprechen wir im Erstgespräch – je nach Umfang und Ziel individuell."},
+  {k:['wie lange','dauer','laufzeit','vertrag','bindung','kündigen','mindestlaufzeit'],r:"Es gibt keine Mindestlaufzeit – du kannst monatlich kündigen. Die meisten Kunden bleiben weit über 12 Monate, weil die Ergebnisse überzeugen."},
+  {k:['ergebnis','ergebnisse','roas','roi','erfolg','resultate','rendite','return','erwarten'],r:"Im Schnitt erzielen unsere Kunden einen ROAS von 6x. Im Erstgespräch zeigen wir dir konkrete Zahlen aus deiner Branche."},
+  {k:['wie schnell','start','anfang','wann','launch','starten','dauert','schnell','live'],r:"Nach Freigabe aller Zugänge starten wir Kampagnen in der Regel innerhalb von 7 Tagen. Landingpages sind meist in 3–5 Tagen live."},
+  {k:['kontakt','erreichen','telefon','email','schreiben','melden','whatsapp','nachricht'],r:"Am schnellsten erreichst du uns per WhatsApp. Alternativ buchst du ein kostenloses Erstgespräch – wir melden uns innerhalb von 24 Stunden."},
+  {k:['meta','facebook','instagram','ads','werbung','anzeigen','kampagne','kampagnen'],r:"Meta Ads sind unser Kerngeschäft. Wir planen, bauen und optimieren Kampagnen auf Facebook & Instagram – mit dem Ziel: qualifizierte Anfragen, kein Streuverlust."},
+  {k:['landingpage','website','seite','homepage','webseite','design','webdesign','entwurf'],r:"Wir bauen Landingpages, die konvertieren – in 3–5 Tagen live. Conversion-optimiert, mobilfreundlich und auf dein Business zugeschnitten."},
+  {k:['garantie','garantiert','sicher','risiko','keine ergebnisse','funktioniert nicht'],r:"Wir arbeiten ergebnisorientiert und setzen im Erstgespräch gemeinsam realistische Ziele. Wir verdienen nur dann gut, wenn du es auch tust."},
+  {k:['branche','eignet','geeignet','passt','handwerk','arzt','gastronomie','immobilien','fitness','bestattung','floristik','restaurant'],r:"Wir arbeiten mit Unternehmen aus allen Branchen – Handwerk, Gastronomie, Immobilien, Gesundheit, Fitness und mehr. Wenn du Kunden brauchst, können wir helfen."},
+  {k:['wer','team','levi','gründer','agentur','über euch','über uns','erfahrung'],r:"LeadFlow wurde von Levi Kirr gegründet. Du arbeitest direkt mit ihm – kein Account-Manager, kein Ticket-System. Persönlich, schnell, direkt."},
+  {k:['anfrage','anfragen','leads','kunden gewinnen','neukunden','neukundengewinnung'],r:"Genau dafür sind wir da. Mit Meta Ads & optimierten Landingpages generieren wir messbare Anfragen – nicht nur Reichweite."},
+  {k:['unterschied','vergleich','andere agentur','warum leadflow','wieso','weshalb'],r:"Wir sind keine klassische Agentur mit Account-Manager-Ping-Pong. Du arbeitest direkt mit dem Gründer, bekommst transparente Zahlen und keine leeren Versprechen."},
+  {k:['hallo','hi','hey','guten tag','guten morgen','servus','moin'],r:"👋 Hey! Schön, dass du da bist. Womit kann ich dir helfen? Du kannst mir einfach deine Frage schreiben."},
+  {k:['schon eine website','brauche ich eine','bereits eine','website nötig','voraussetzung'],r:"Nein! Du brauchst keine bestehende Website. Wir bauen dir eine Landingpage von Grund auf – du brauchst nur dein Angebot, wir erledigen den Rest in 3–5 Tagen."},
+  {k:['zusammenarbeit','ablauf','prozess','vorgehen','wie funktioniert','wie geht das','schritt','abläuft'],r:"Nach dem Erstgespräch erstellen wir eine Strategie und legen los: Ads-Konzept, Landingpage-Aufbau, Launch. Du bekommst wöchentliche Updates – transparent und direkt."},
+  {k:['was brauche','unterlagen','zugang','zugriff','material','braucht ihr','benötigt ihr'],r:"Wir brauchen von dir: Zugang zu deinem Meta Business Manager, Infos zu deinem Angebot und idealerweise ein Foto von dir. Den Rest übernehmen wir komplett."},
+];
+const TOPIC_MAP={"💰 Preise":"Was kostet es?","⏱ Ablauf":"Wie läuft die Zusammenarbeit ab?","📊 Ergebnisse":"Welche Ergebnisse kann ich erwarten?","🏢 Branchen":"Für welche Branchen arbeitet ihr?","🖥 Landingpage":"Was macht ihr mit Landingpages?","👥 Team":"Wer steckt hinter LeadFlow?"};
+function callAI(msg){
+  const id=addMsg('bot','...',true);
+  const lower=msg.toLowerCase();
+  let reply=null;
+  for(const f of FAQ){if(f.k.some(k=>lower.includes(k))){reply=f.r;break;}}
+  if(!reply)reply="Gute Frage! Am besten klären wir das direkt – schreib uns auf WhatsApp oder buch ein kostenloses Erstgespräch. Wir melden uns innerhalb von 24 Stunden.";
+  setTimeout(()=>{updateMsg(id,reply);convo.push({role:'assistant',content:reply});showOpts(["📅 Erstgespräch buchen","💬 Weitere Frage","📱 WhatsApp schreiben"]);},700);
+}
+function startCalendlyFlow(){
+  document.getElementById('chat-opts').innerHTML='';
+  setTimeout(()=>{addMsg('bot','Super! Wie heißt du, damit ich das Gespräch vorbereiten kann? 😊');awaitingName=true;},400);
+}
+function handleChatOpt(t){
+  if(t==="📱 WhatsApp schreiben"){window.open('https://wa.me/4915563398656','_blank');return;}
+  if(t==="📅 Termin auswählen"){openCalendly();return;}
+  if(t==="📅 Erstgespräch buchen"){
+    document.getElementById('chat-opts').innerHTML='';addMsg('user','Erstgespräch buchen');
+    if(!userName){startCalendlyFlow();}else{openCalendly();}return;
+  }
+  if(t==="✅ Danke!"){document.getElementById('chat-opts').innerHTML='';addMsg('user','Danke!');setTimeout(()=>addMsg('bot','Gerne! Meld dich jederzeit. 👋'),400);return;}
+  if(t==="💬 Weitere Frage"){
+    document.getElementById('chat-opts').innerHTML='';addMsg('user','Weitere Frage');
+    setTimeout(()=>{addMsg('bot','Klar! Zu welchem Thema hast du eine Frage?');showOpts(["💰 Preise","⏱ Ablauf","📊 Ergebnisse","🏢 Branchen","🖥 Landingpage","👥 Team"]);},400);return;
+  }
+  if(TOPIC_MAP[t]){document.getElementById('chat-opts').innerHTML='';addMsg('user',t);convo.push({role:'user',content:TOPIC_MAP[t]});setTimeout(()=>callAI(TOPIC_MAP[t]),400);return;}
+  handleOpt(t);
+}
+function addMsg(role,text,loading=false){
+  const id='m'+Date.now();const el=document.getElementById('chat-msgs');const d=document.createElement('div');
+  d.className=`msg ${role}${loading?' loading':''}`;d.id=id;d.style.whiteSpace='pre-wrap';
+  if(loading){d.innerHTML='<span class="typing-dots"><span></span><span></span><span></span></span>';}
+  else{d.textContent=text;}
+  el.appendChild(d);el.scrollTop=el.scrollHeight;return id;
+}
+function updateMsg(id,text){const el=document.getElementById(id);if(el){el.innerHTML='';el.textContent=text;el.classList.remove('loading');}document.getElementById('chat-msgs').scrollTop=9999;}
+
+function loadMetaPixel(){
+  /* Meta Pixel hier einfügen – wird nur nach Zustimmung ausgeführt:
+  !function(f,b,e,v,n,t,s){...}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init','DEINE_PIXEL_ID');
+  fbq('track','PageView');
+  */
+}
+function cookieChoice(accepted){
+  localStorage.setItem('leadflow_cookie_consent',accepted?'true':'false');
+  document.getElementById('cookie-banner').style.display='none';
+  if(accepted)loadMetaPixel();
+}
+(function initCookieBanner(){
+  const consent=localStorage.getItem('leadflow_cookie_consent');
+  if(!consent){document.getElementById('cookie-banner').style.display='block';}
+  else if(consent==='true'){loadMetaPixel();}
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<link rel="icon" type="image/svg+xml" href="./favicon.svg"/>
+<title>Ads-Ergebnisse – LeadFlow</title>
+<meta name="description" content="Echte Ergebnisse aus unseren Meta Ads Kampagnen. Kein Schönreden – nur messbare Performance für unsere Kunden."/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#ffffff;
+  --bg2:#f5f6fa;
+  --bg3:#eef0f6;
+  --text:#0a0c28;
+  --muted:rgba(10,12,40,.5);
+  --muted2:rgba(10,12,40,.35);
+  --border:rgba(10,12,40,.08);
+  --border2:rgba(10,12,40,.15);
+  --accent:#0a0c28;
+  --r:8px;--rl:14px;
+}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{background:var(--bg);color:var(--text);font-family:'Plus Jakarta Sans',system-ui,sans-serif;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+button,a{-webkit-tap-highlight-color:transparent}
+::-webkit-scrollbar{width:4px}::-webkit-scrollbar-track{background:transparent}::-webkit-scrollbar-thumb{background:rgba(10,12,40,.15);border-radius:4px}
+
+/* NAV */
+nav{position:fixed;top:0;width:100%;z-index:200;padding:0 2.5rem;display:flex;justify-content:space-between;align-items:center;background:rgba(255,255,255,.88);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--border);height:60px}
+.nav-logo img{height:50px;object-fit:contain;filter:brightness(0) contrast(1)}
+.nav-links{display:none;gap:2rem;list-style:none}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:.875rem;font-weight:500;transition:.2s}
+.nav-links a:hover,.nav-links a.active{color:var(--text)}
+.nav-cta{display:none}
+.hamburger{display:flex;background:none;border:none;cursor:pointer;flex-direction:column;gap:5px;padding:.4rem}
+.hamburger span{display:block;width:22px;height:1.5px;background:var(--text);border-radius:2px;transition:.3s;opacity:.6}
+.hamburger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg);opacity:1}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg);opacity:1}
+.mob-overlay{position:fixed;inset:0;background:rgba(0,0,0,.3);z-index:150;display:none;backdrop-filter:blur(4px)}
+.mob-overlay.open{display:block}
+.mob-menu{position:fixed;top:0;right:0;width:85vw;height:100vh;background:var(--bg2);border-left:1px solid var(--border);z-index:160;transform:translateX(100%);transition:transform .3s ease;padding:5rem 1.5rem 2.5rem;display:flex;flex-direction:column;gap:.3rem}
+.mob-menu.open{transform:translateX(0)}
+.mob-item{background:none;border:none;color:var(--muted);font-family:'Plus Jakarta Sans',sans-serif;font-size:1.25rem;font-weight:600;padding:1rem 1rem;border-radius:var(--r);cursor:pointer;text-align:left;width:100%;transition:.2s;text-decoration:none;display:block}
+.mob-item:hover{background:rgba(10,12,40,.05);color:var(--text)}
+.mob-item.acc{color:#fff;background:var(--text);font-weight:700;margin-top:.8rem;text-align:center;border-radius:var(--r)}
+.mob-item.acc:hover{background:rgba(10,12,40,.8)}
+.nav-btn{background:var(--text);color:#fff;border:none;padding:.48rem 1.2rem;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:.8rem;cursor:pointer;border-radius:var(--r);transition:.2s}
+.nav-btn:hover{background:rgba(10,12,40,.8)}
+
+/* HERO */
+.port-hero{padding:9rem 2rem 5rem;text-align:center;background:var(--bg2);border-bottom:1px solid var(--border)}
+.port-eyebrow{display:inline-flex;align-items:center;gap:.5rem;font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:1.4rem;border:1px solid var(--border2);padding:.3rem 1rem;border-radius:999px;background:var(--bg)}
+.port-title{font-size:clamp(2rem,5vw,3.8rem);font-weight:800;letter-spacing:-.03em;line-height:1.05;margin-bottom:1rem}
+.port-sub{color:var(--muted);font-size:1rem;line-height:1.75;max-width:480px;margin:0 auto}
+
+/* GRID */
+.port-section{padding:3rem 2rem 6rem}
+.port-inner{max-width:1100px;margin:0 auto}
+.port-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:1.5rem;margin-top:2rem}
+
+/* RESULT CARD */
+.res-card{border:1px solid var(--border);border-radius:var(--rl);overflow:hidden;background:var(--bg);transition:.25s}
+.res-card:hover{box-shadow:0 12px 40px rgba(10,12,40,.1);transform:translateY(-3px);border-color:var(--border2)}
+.res-screen{aspect-ratio:16/9;background:var(--bg3);position:relative;overflow:hidden;border-bottom:1px solid var(--border)}
+.res-screen img{width:100%;height:100%;object-fit:cover;object-position:top center;position:absolute;top:0;left:0}
+.res-screen-placeholder{width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:var(--bg3)}
+.res-body{padding:1.2rem 1.4rem 1.4rem}
+.res-tag{display:inline-block;font-size:.65rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted2);margin-bottom:.5rem}
+.res-name{font-size:1.05rem;font-weight:700;margin-bottom:.8rem}
+.res-stats{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;margin-bottom:1rem}
+.stat-box{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);padding:.7rem .9rem}
+.stat-val{font-size:1.3rem;font-weight:800;letter-spacing:-.02em;line-height:1}
+.stat-val.green{color:#16a34a}
+.stat-label{font-size:.65rem;color:var(--muted2);font-weight:500;margin-top:.2rem}
+.res-desc{font-size:.82rem;color:var(--muted);line-height:1.6}
+
+/* CTA CARD */
+.card-soon{border:1px dashed var(--border2);border-radius:var(--rl);background:var(--bg2);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.6rem;padding:3rem 2rem;text-align:center;min-height:280px}
+.btn-p{background:var(--text);color:#fff;border:none;padding:.85rem 2rem;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:.875rem;cursor:pointer;border-radius:var(--r);transition:.2s;display:inline-flex;align-items:center;gap:.5rem;text-decoration:none}
+.btn-p:hover{background:rgba(10,12,40,.8);transform:translateY(-1px)}
+
+/* FOOTER */
+footer{background:var(--bg2);border-top:1px solid var(--border);padding:1.875rem 2rem}
+.footer-inner{max-width:1100px;margin:0 auto}
+.footer-bottom{display:flex;flex-wrap:wrap;gap:.8rem;flex-direction:column;text-align:center}
+.footer-bottom p{color:var(--muted2);font-size:.75rem}
+.footer-legal{display:flex;gap:.5rem;align-items:center;width:100%;justify-content:center}
+.footer-legal a{color:var(--muted2);font-size:.72rem;text-decoration:none;transition:.2s}
+.footer-legal a:hover{color:var(--text)}
+.footer-legal span{color:var(--muted2);font-size:.72rem}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  nav{padding:0 1.2rem;height:54px}
+  .nav-logo img{height:52px;transform:scale(1.6);transform-origin:left 43%}
+  .port-grid{grid-template-columns:1fr}
+  .res-stats{grid-template-columns:1fr 1fr}
+}
+@media(min-width:769px){
+  .nav-logo img{height:60px;transform:scale(2.16);transform-origin:left 50%}
+}
+@media(min-width:900px){
+  nav{padding:.45rem 3.5rem}
+  .nav-links{display:flex}
+  .nav-cta{display:block}
+  .hamburger{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo"><a href="./index.html"><img src="./Bilder/logo.png" alt="LeadFlow"/></a></div>
+  <ul class="nav-links">
+    <li><a href="./index.html#vorteile">Leistungen</a></li>
+    <li><a href="./index.html#prozess">Prozess</a></li>
+    <li><a href="./index.html#referenzen">Referenzen</a></li>
+    <li><a href="./portfolio.html">Website-Portfolio</a></li>
+    <li><a href="./ads-ergebnisse.html" class="active">Ads-Ergebnisse</a></li>
+  </ul>
+  <button class="nav-btn nav-cta" onclick="openWhatsApp()">Jetzt anfragen</button>
+  <button class="hamburger" id="ham" onclick="toggleMob()"><span></span><span></span><span></span></button>
+</nav>
+<div class="mob-overlay" id="mob-ov" onclick="closeMob()"></div>
+<div class="mob-menu" id="mob-menu">
+  <a class="mob-item" href="./index.html">Home</a>
+  <a class="mob-item" href="./portfolio.html">Website-Portfolio</a>
+  <a class="mob-item" href="./ads-ergebnisse.html">Ads-Ergebnisse</a>
+  <button class="mob-item acc" onclick="openWhatsApp();closeMob()">Jetzt anfragen</button>
+</div>
+
+<!-- HERO -->
+<div class="port-hero">
+  <div class="port-eyebrow">Echte Ergebnisse</div>
+  <h1 class="port-title">Ads-Ergebnisse</h1>
+  <p class="port-sub">Keine Hochglanz-Versprechen – nur echte Zahlen aus laufenden Kampagnen unserer Kunden.</p>
+</div>
+
+<!-- GRID -->
+<section class="port-section">
+  <div class="port-inner">
+    <div class="port-grid" id="adsGrid">
+
+      <!-- CTA Card -->
+      <div class="card-soon" style="grid-column:1/-1">
+        <h2 style="font-size:3rem;font-weight:800;letter-spacing:-.03em;margin-bottom:.5rem">Coming soon</h2>
+        <p style="color:var(--muted);font-size:.85rem;line-height:1.6;max-width:260px">Wir bereiten gerade die ersten Kampagnen-Auswertungen auf. Bald mehr zu sehen.</p>
+        <a href="https://wa.me/4915563398656" target="_blank" class="btn-p" style="margin-top:.8rem">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Unverbindliche Beratung einholen
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-bottom" style="border-top:none;padding-top:0">
+      <p>Gegründet von Levi Kirr</p>
+      <p class="footer-legal"><a href="./datenschutz.html">Datenschutz</a><span>·</span><a href="./impressum.html">Impressum</a></p>
+      <p>Copyright © 2025 LeadFlow. Alle Rechte vorbehalten.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+function toggleMob(){
+  document.getElementById('ham').classList.toggle('open');
+  document.getElementById('mob-menu').classList.toggle('open');
+  document.getElementById('mob-ov').classList.toggle('open');
+}
+function closeMob(){
+  document.getElementById('ham').classList.remove('open');
+  document.getElementById('mob-menu').classList.remove('open');
+  document.getElementById('mob-ov').classList.remove('open');
+}
+function openCalendly(){
+  window.open('https://calendly.com/scaleyourvision1/free','_blank');
+}
+function openWhatsApp(){window.open('https://wa.me/4915563398656','_blank');}
+</script>
+</body>
+</html>

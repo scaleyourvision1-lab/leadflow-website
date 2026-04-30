@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<link rel="icon" type="image/svg+xml" href="./favicon.svg"/>
+<title>Datenschutz – LeadFlow</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#ffffff;
+  --bg2:#f5f6fa;
+  --text:#0a0c28;
+  --muted:rgba(10,12,40,.5);
+  --muted2:rgba(10,12,40,.35);
+  --border:rgba(10,12,40,.08);
+  --border2:rgba(10,12,40,.15);
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'Segoe UI',system-ui,sans-serif;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+
+/* NAV */
+nav{position:fixed;top:0;width:100%;z-index:200;padding:0 2.5rem;display:flex;justify-content:space-between;align-items:center;background:rgba(255,255,255,.85);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--border);height:58px}
+.nav-logo img{height:50px;object-fit:contain;filter:brightness(0) contrast(1)}
+.nav-back{background:none;border:1px solid var(--border2);color:var(--muted);padding:.45rem 1rem;border-radius:8px;font-size:.85rem;font-weight:600;cursor:pointer;text-decoration:none;transition:.2s}
+.nav-back:hover{color:var(--text);border-color:var(--text)}
+
+/* CONTENT */
+.page-wrap{max-width:760px;margin:0 auto;padding:6rem 2rem 5rem}
+.page-label{display:inline-flex;align-items:center;gap:.5rem;font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:1rem}
+.page-label::before,.page-label::after{content:'';display:inline-block;width:18px;height:1px;background:var(--border2)}
+h1{font-size:clamp(2rem,4vw,3rem);font-weight:900;letter-spacing:-.03em;margin-bottom:2.5rem;line-height:1.1}
+h2{font-size:1.05rem;font-weight:700;margin:2rem 0 .6rem;color:var(--text)}
+p{color:var(--muted);font-size:.925rem;line-height:1.8;margin-bottom:.8rem}
+ul{color:var(--muted);font-size:.925rem;line-height:1.8;padding-left:1.4rem;margin-bottom:.8rem}
+ul li{margin-bottom:.3rem}
+a{color:var(--text);text-decoration:underline;text-underline-offset:3px}
+a:hover{opacity:.7}
+.divider{border:none;border-top:1px solid var(--border);margin:2.5rem 0}
+
+/* FOOTER */
+footer{background:var(--bg2);border-top:1px solid var(--border);padding:2rem;text-align:center}
+footer p{color:var(--muted2);font-size:.78rem}
+footer a{color:var(--muted);text-decoration:none;margin:0 .6rem;font-size:.78rem}
+footer a:hover{color:var(--text)}
+
+@media(max-width:600px){
+  nav{padding:0 1.2rem}
+  .page-wrap{padding:5rem 1.2rem 4rem}
+}
+@media(min-width:769px){
+  .nav-logo img{height:60px;transform:scale(2.16);transform-origin:left 50%}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo"><img src="./Bilder/logo.png" alt="LeadFlow"/></div>
+  <a class="nav-back" href="./index.html">← Zurück</a>
+</nav>
+
+<div class="page-wrap">
+  <div class="page-label">Rechtliches</div>
+  <h1>Datenschutzerklärung</h1>
+
+  <h2>1. Verantwortlicher</h2>
+  <p>
+    Verantwortlicher im Sinne der Datenschutz-Grundverordnung (DSGVO) ist:<br/><br/>
+    Levi Kirr – LeadFlow<br/>
+    Ulmbachstraße 2<br/>
+    35753 Greifenstein<br/>
+    E-Mail: <a href="mailto:scaleyourvision1@gmail.com">scaleyourvision1@gmail.com</a>
+  </p>
+
+  <hr class="divider"/>
+
+  <h2>2. Erhebung und Speicherung personenbezogener Daten</h2>
+  <p>Beim Besuch unserer Website werden durch den Browser automatisch folgende Informationen an unseren Server übermittelt:</p>
+  <ul>
+    <li>IP-Adresse des anfragenden Rechners</li>
+    <li>Datum und Uhrzeit des Zugriffs</li>
+    <li>Name und URL der abgerufenen Datei</li>
+    <li>Website, von der aus der Zugriff erfolgt (Referrer-URL)</li>
+    <li>Verwendeter Browser und ggf. das Betriebssystem Ihres Rechners</li>
+  </ul>
+  <p>Diese Daten werden ausschließlich zur Sicherstellung eines störungsfreien Betriebs der Website sowie zur Verbesserung unseres Angebots verwendet. Eine Weitergabe an Dritte erfolgt nicht.</p>
+
+  <hr class="divider"/>
+
+  <h2>3. Kontaktaufnahme</h2>
+  <p>Wenn Sie uns per E-Mail oder über das Kontaktformular kontaktieren, werden die übermittelten Daten (Name, E-Mail-Adresse, Nachricht) gespeichert, um Ihre Anfrage zu bearbeiten und eventuelle Rückfragen zu stellen. Diese Daten werden ohne Ihre Einwilligung nicht an Dritte weitergegeben.</p>
+
+  <hr class="divider"/>
+
+  <h2>4. Terminbuchung (Calendly)</h2>
+  <p>Für die Buchung von Terminen nutzen wir den Dienst Calendly (Calendly LLC, 271 17th St NW, Ste 1000, Atlanta, Georgia 30363, USA). Wenn Sie einen Termin buchen, werden die von Ihnen eingegebenen Daten (Name, E-Mail-Adresse, ggf. weitere Angaben) an Calendly übertragen und dort verarbeitet. Weitere Informationen finden Sie in der <a href="https://calendly.com/privacy" target="_blank" rel="noopener">Datenschutzerklärung von Calendly</a>.</p>
+
+  <hr class="divider"/>
+
+  <h2>5. Ihre Rechte</h2>
+  <p>Sie haben das Recht auf:</p>
+  <ul>
+    <li>Auskunft über die zu Ihrer Person gespeicherten Daten (Art. 15 DSGVO)</li>
+    <li>Berichtigung unrichtiger Daten (Art. 16 DSGVO)</li>
+    <li>Löschung Ihrer Daten (Art. 17 DSGVO)</li>
+    <li>Einschränkung der Verarbeitung (Art. 18 DSGVO)</li>
+    <li>Datenübertragbarkeit (Art. 20 DSGVO)</li>
+    <li>Widerspruch gegen die Verarbeitung (Art. 21 DSGVO)</li>
+  </ul>
+  <p>Zur Geltendmachung dieser Rechte wenden Sie sich bitte an: <a href="mailto:scaleyourvision1@gmail.com">scaleyourvision1@gmail.com</a></p>
+  <p>Zudem haben Sie das Recht, sich bei einer Datenschutz-Aufsichtsbehörde zu beschweren.</p>
+
+  <hr class="divider"/>
+
+  <h2>6. Datensicherheit</h2>
+  <p>Diese Website nutzt aus Sicherheitsgründen und zum Schutz der Übertragung vertraulicher Inhalte eine SSL/TLS-Verschlüsselung.</p>
+
+  <hr class="divider"/>
+
+  <h2>7. Aktualität dieser Datenschutzerklärung</h2>
+  <p>Diese Datenschutzerklärung hat den Stand: April 2026. Wir behalten uns vor, diese bei Bedarf anzupassen, um sie stets den aktuellen rechtlichen Anforderungen entsprechen zu lassen.</p>
+</div>
+
+<footer>
+  <p style="margin-bottom:.6rem">
+    <a href="./index.html">Startseite</a>
+    <a href="./impressum.html">Impressum</a>
+    <a href="./datenschutz.html">Datenschutz</a>
+  </p>
+  <p>Copyright © 2026 LeadFlow. Alle Rechte vorbehalten.</p>
+</footer>
+
+</body>
+</html>
