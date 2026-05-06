@@ -53,10 +53,14 @@ nav{position:fixed;top:0;width:100%;z-index:200;padding:0 2.5rem;display:flex;ju
 .nav-btn:hover{background:rgba(10,12,40,.8)}
 
 /* HERO */
-.port-hero{padding:9rem 2rem 5rem;text-align:center;background:var(--bg2);border-bottom:1px solid var(--border)}
-.port-eyebrow{display:inline-flex;align-items:center;gap:.5rem;font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:1.4rem;border:1px solid var(--border2);padding:.3rem 1rem;border-radius:999px;background:var(--bg)}
+.port-hero{padding:9rem 2rem 2.5rem;text-align:center;background:var(--bg2);border-bottom:1px solid var(--border)}
 .port-title{font-size:clamp(2rem,5vw,3.8rem);font-weight:800;letter-spacing:-.03em;line-height:1.05;margin-bottom:1rem}
 .port-sub{color:var(--muted);font-size:1rem;line-height:1.75;max-width:480px;margin:0 auto}
+.hero-stats{display:flex;align-items:center;justify-content:center;gap:1.5rem;margin-top:2rem;flex-wrap:nowrap;width:100%}
+.hero-stat{display:flex;flex-direction:column;align-items:center;gap:.15rem}
+.hero-stat-val{font-size:1.4rem;font-weight:800;letter-spacing:-.02em;color:var(--text)}
+.hero-stat-label{font-size:.7rem;color:var(--muted);font-weight:500}
+.hero-stat-div{width:1px;height:28px;background:var(--border2);opacity:.5}
 
 /* GRID */
 .port-section{padding:3rem 2rem 6rem}
@@ -135,9 +139,18 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:1.875rem
 
 <!-- HERO -->
 <div class="port-hero">
-  <div class="port-eyebrow">Echte Ergebnisse</div>
   <h1 class="port-title">Ads-Ergebnisse</h1>
   <p class="port-sub">Keine Hochglanz-Versprechen – nur echte Zahlen aus laufenden Kampagnen unserer Kunden.</p>
+
+  <!-- Stats -->
+  <div class="hero-stats">
+    <div class="hero-stat"><span class="hero-stat-val">5+</span><span class="hero-stat-label">Aktive Kampagnen</span></div>
+    <div class="hero-stat-div"></div>
+    <div class="hero-stat"><span class="hero-stat-val">Ø 3,2x</span><span class="hero-stat-label">ROAS</span></div>
+    <div class="hero-stat-div"></div>
+    <div class="hero-stat"><span class="hero-stat-val">Meta</span><span class="hero-stat-label">Ads Plattform</span></div>
+  </div>
+
 </div>
 
 <!-- GRID -->
